@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us | Cycle Pe Sunday{% endblock %}
+
+{% block content %}
+    <section class="py-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <h1 class="text-5xl font-black text-white mb-6 uppercase tracking-tighter">The Movement</h1>
+                    <div class="w-16 h-1 bg-[#39FF14] shadow-[0_0_10px_rgba(57,255,20,0.8)] mb-8"></div>
+                    <div class="space-y-6 text-lg text-zinc-400">
+                        <p>We started with a simple idea: grab a cycle, pick a Sunday, and make the city a little better than we found it.</p>
+                        <p>What began as a small group of friends has evolved into an unstoppable community infrastructure. For over 650 consecutive weeks, we have planted trees, cleared waste, and promoted active living.</p>
+                        <p class="text-white font-semibold border-l-4 border-[#39FF14] pl-4">No politics. No excuses. Just action.</p>
+                    </div>
+                </div>
+                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl aspect-square flex items-center justify-center shadow-inner" data-aos="fade-left">
+                    <span class="text-zinc-600 font-bold uppercase tracking-widest text-sm text-center px-4">[Group Photo Placeholders]</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-zinc-950 border-t border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-black text-center text-white mb-16 uppercase tracking-tighter" data-aos="fade-up">Core Directives</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-black p-10 rounded-2xl border border-zinc-900 hover:border-[#39FF14] transition-colors" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-zinc-900 rounded-full mx-auto mb-6 flex items-center justify-center border border-zinc-800">
+                        <span class="text-[#39FF14] text-2xl font-black">1</span>
+                    </div>
+                    <h3 class="text-xl font-black mb-3 text-white uppercase tracking-widest">Health</h3>
+                </div>
+                <div class="bg-black p-10 rounded-2xl border border-zinc-900 hover:border-[#39FF14] transition-colors" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-zinc-900 rounded-full mx-auto mb-6 flex items-center justify-center border border-zinc-800">
+                        <span class="text-[#39FF14] text-2xl font-black">2</span>
+                    </div>
+                    <h3 class="text-xl font-black mb-3 text-white uppercase tracking-widest">Ecology</h3>
+                </div>
+                <div class="bg-black p-10 rounded-2xl border border-zinc-900 hover:border-[#39FF14] transition-colors" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-zinc-900 rounded-full mx-auto mb-6 flex items-center justify-center border border-zinc-800">
+                        <span class="text-[#39FF14] text-2xl font-black">3</span>
+                    </div>
+                    <h3 class="text-xl font-black mb-3 text-white uppercase tracking-widest">Community</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

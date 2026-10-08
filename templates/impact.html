@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Impact | Cycle Pe Sunday{% endblock %}
+
+{% block content %}
+    <section class="bg-black py-20 border-b border-zinc-900">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-black mb-6 uppercase tracking-tighter text-white" data-aos="zoom-in">The Archive</h1>
+            <div class="w-16 h-1 bg-[#39FF14] mx-auto shadow-[0_0_10px_rgba(57,255,20,0.8)] mb-4"></div>
+            <p class="text-lg text-zinc-400 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Explore our history of community action.</p>
+        </div>
+    </section>
+
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-black">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for drive in past_drives %}
+                <div class="bg-zinc-950 rounded-xl shadow-lg border border-zinc-900 hover:border-[#39FF14] p-6 transition-all group" data-aos="fade-up">
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-xl font-black text-white group-hover:text-[#39FF14] uppercase tracking-wide">Week {{ drive.drive_number }}</h3>
+                        <span class="text-xs font-bold text-zinc-500 uppercase tracking-widest">{{ drive.date|date:"M d, Y" }}</span>
+                    </div>
+                    <h4 class="font-bold text-zinc-300 mb-6">{{ drive.title }}</h4>
+                    <div class="space-y-3 text-sm text-zinc-400 bg-zinc-900 p-4 rounded-lg border border-zinc-800">
+                        <p class="flex justify-between"><span>Trees Planted:</span> <span class="font-black text-[#39FF14]">{{ drive.trees_planted }}</span></p>
+                        <p class="flex justify-between"><span>Waste Cleared:</span> <span class="font-black text-[#39FF14]">{{ drive.waste_cleared_kg }} kg</span></p>
+                        <p class="flex justify-between"><span>Volunteers:</span> <span class="font-black text-[#39FF14]">{{ drive.volunteer_count }}</span></p>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-span-full text-center py-20">
+                    <p class="text-zinc-500 text-lg uppercase tracking-widest font-bold">No past drives recorded yet.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

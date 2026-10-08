@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Cycle Pe Sunday{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #39FF14; }
+    </style>
+</head>
+<body class="bg-black text-zinc-300 flex flex-col min-h-screen overflow-x-hidden">
+
+    <nav class="bg-black/80 backdrop-blur-md border-b border-zinc-900 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="{% url 'drives:home' %}" class="text-2xl font-bold text-white tracking-tight uppercase">
+                        Cycle<span class="text-[#39FF14]">Pe</span>Sunday
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="{% url 'drives:home' %}" class="text-zinc-400 hover:text-[#39FF14] font-medium transition-colors">Home</a>
+                    <a href="{% url 'drives:impact' %}" class="text-zinc-400 hover:text-[#39FF14] font-medium transition-colors">Impact</a>
+                    <a href="{% url 'drives:about' %}" class="text-zinc-400 hover:text-[#39FF14] font-medium transition-colors">About</a>
+                    <a href="{% url 'drives:join' %}" class="bg-transparent border border-[#39FF14] text-[#39FF14] hover:bg-[#39FF14] hover:text-black px-6 py-2 rounded-full font-bold transition-all shadow-[0_0_10px_rgba(57,255,20,0.2)] hover:shadow-[0_0_20px_rgba(57,255,20,0.6)] uppercase tracking-wide text-sm">
+                        Join Next Ride
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="bg-zinc-950 border-t border-zinc-900 text-white py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4 uppercase tracking-widest text-white">Cycle<span class="text-[#39FF14]">Pe</span>Sunday</h3>
+                <p class="text-zinc-500">Pedaling towards a greener, cleaner tomorrow, one Sunday at a time.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-white">Command Center</h4>
+                <ul class="space-y-2 text-zinc-500">
+                    <li><a href="{% url 'drives:about' %}" class="hover:text-[#39FF14] transition-colors">About the Movement</a></li>
+                    <li><a href="{% url 'drives:impact' %}" class="hover:text-[#39FF14] transition-colors">The Impact Archive</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-white">Connect</h4>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/cyclepesunday/" class="text-zinc-500 hover:text-[#39FF14] transition-colors">Instagram</a>
+                    <a href="https://x.com/cyclepesunday" class="text-zinc-500 hover:text-[#39FF14] transition-colors">Twitter</a>
+                    <a href="https://www.facebook.com/CyclePeSundayBihat/" class="text-zinc-500 hover:text-[#39FF14] transition-colors">Facebook</a>
+                    <a href="https://whatsapp.com/channel/0029Vb7H2JnCnA7twnNHOx23" class="text-zinc-500 hover:text-[#39FF14] transition-colors">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-zinc-900 text-center text-zinc-600 text-sm">
+            © {% now "Y" %} Cycle Pe Sunday. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50, duration: 800, easing: 'ease-out-cubic' });
+    </script>
+</body>
+</html>
